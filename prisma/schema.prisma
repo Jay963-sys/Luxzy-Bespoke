@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+enum ProductionStatus {
+  ORDERED
+  MEASUREMENTS_VERIFIED
+  CUTTING_LEATHER
+  STITCHING
+  LASTING
+  QUALITY_CONTROL
+  SHIPPED
+  DELIVERED
+}
+
+
+model Customer {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  name          String?
+  clerkId       String?  @unique 
+  
+  savedMeasurements Json? 
+  
+  orders        Order[]
+  createdAt     DateTime @default(now())
+}
+
+model Order {
+  id              String   @id @default(cuid())
+  customerId      String
+  customer        Customer @relation(fields: [customerId], references: [id])
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  customerName    String
+  customerEmail   String
+  phoneNumber     String?
+  
+  totalAmount     Float
+  currency        String           @default("NGN")
+  paymentStatus   String           @default("PENDING") // PENDING, PAID, FAILED
+  reference       String           @unique // Paystack transaction reference
+
+  status          ProductionStatus @default(ORDERED)
+  items           OrderItem[]
+  
+  address         String
+  city            String           @default("Lagos")
+}
+
+model OrderItem {
+  id            String   @id @default(cuid())
+  orderId       String
+  order         Order    @relation(fields: [orderId], references: [id])
+  
+  productName   String
+  price         Float
+  
+  size          String   
+  measurements  Json?    
+  customNotes   String?  @db.Text
+}
