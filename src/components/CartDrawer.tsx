@@ -78,9 +78,9 @@ export default function CartDrawer() {
               </div>
               <button
                 onClick={toggleCart}
-                className="hover:rotate-90 transition-transform duration-300"
+                className="text-black hover:text-neutral-700 hover:rotate-90 transition-all duration-300"
               >
-                <X size={20} strokeWidth={1} />
+                <X size={40} strokeWidth={1} />
               </button>
             </div>
 

@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 interface CartItem {
   id: string;
@@ -18,41 +19,51 @@ interface CartStore {
   clearCart: () => void;
 }
 
-export const useCartStore = create<CartStore>((set) => ({
-  isOpen: false,
-  cartItems: [],
-  toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
+export const useCartStore = create<CartStore>()(
+  persist(
+    (set) => ({
+      isOpen: false,
+      cartItems: [],
 
-  addItem: (newItem) =>
-    set((state) => {
-      const existingItemIndex = state.cartItems.findIndex(
-        (i) => i.id === newItem.id && i.size === newItem.size,
-      );
+      toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
 
-      if (existingItemIndex > -1) {
-        const updatedCart = [...state.cartItems];
-        updatedCart[existingItemIndex].quantity += newItem.quantity || 1;
+      addItem: (newItem) =>
+        set((state) => {
+          const existingItemIndex = state.cartItems.findIndex(
+            (i) => i.id === newItem.id && i.size === newItem.size,
+          );
 
-        return {
-          cartItems: updatedCart,
-          isOpen: true,
-        };
-      }
+          if (existingItemIndex > -1) {
+            const updatedCart = [...state.cartItems];
+            updatedCart[existingItemIndex].quantity += newItem.quantity || 1;
 
-      return {
-        cartItems: [
-          ...state.cartItems,
-          { ...newItem, quantity: newItem.quantity || 1 },
-        ],
-        isOpen: true,
-      };
+            return {
+              cartItems: updatedCart,
+              isOpen: true,
+            };
+          }
+
+          return {
+            cartItems: [
+              ...state.cartItems,
+              { ...newItem, quantity: newItem.quantity || 1 },
+            ],
+            isOpen: true,
+          };
+        }),
+
+      removeItem: (id, size) =>
+        set((state) => ({
+          cartItems: state.cartItems.filter(
+            (item) => !(item.id === id && item.size === size),
+          ),
+        })),
+
+      clearCart: () => set({ cartItems: [], isOpen: false }),
     }),
-
-  removeItem: (id, size) =>
-    set((state) => ({
-      cartItems: state.cartItems.filter(
-        (item) => !(item.id === id && item.size === size),
-      ),
-    })),
-  clearCart: () => set({ cartItems: [], isOpen: false }),
-}));
+    {
+      name: "luxzy-cart-storage",
+      partialize: (state) => ({ cartItems: state.cartItems }),
+    },
+  ),
+);
