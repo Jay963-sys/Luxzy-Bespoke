@@ -4,7 +4,7 @@ import { useState, use } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useCartStore } from "@/store/useCartStore";
-import { Ruler } from "lucide-react";
+import { Ruler, PenTool } from "lucide-react";
 import { getProductBySlug } from "@/lib/products";
 
 export default function ProductPage({
@@ -17,8 +17,10 @@ export default function ProductPage({
   const product = getProductBySlug(slug);
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState<string>("");
-  const addItem = useCartStore((state) => state.addItem);
+  const [personalization, setPersonalization] = useState<string>(""); // NEW: For engravings
   const [isAdding, setIsAdding] = useState(false);
+
+  const addItem = useCartStore((state) => state.addItem);
 
   if (!product)
     return (
@@ -29,19 +31,34 @@ export default function ProductPage({
       </div>
     );
 
+  // Dynamic logic based on category
+  const isAccessory = product.category === "Accessories";
+  const sizeLabel = isAccessory ? "Select Length / Size" : "Select Size (EU)";
+  const sizeOptions = isAccessory
+    ? ["S", "M", "L", "Custom"]
+    : ["39", "40", "41", "42", "43", "44", "45", "46"];
+
   const handleAddToCart = () => {
     if (!selectedSize) {
-      alert("Please select a size for your bespoke commission.");
+      alert(
+        `Please select a ${isAccessory ? "size/length" : "shoe size"} for your bespoke commission.`,
+      );
       return;
     }
 
     setIsAdding(true);
 
+    // If they added an inscription, we append it to the size string so it shows in the cart easily
+    const finalSizeString =
+      isAccessory && personalization.trim() !== ""
+        ? `${selectedSize} (Engraved: ${personalization})`
+        : selectedSize;
+
     addItem({
       id: product.id,
       name: `${product.name.prefix} ${product.name.numeral}`,
       price: product.price,
-      size: selectedSize,
+      size: finalSizeString,
       image: product.images[0],
       quantity: quantity,
     });
@@ -77,8 +94,8 @@ export default function ProductPage({
 
           {/* Right: Details (Sticky) */}
           <div className="lg:sticky lg:top-32 h-fit">
-            <span className="text-[10px] uppercase tracking-[0.4em] text-neutral-500">
-              {product.tag}
+            <span className="text-[10px] uppercase tracking-[0.4em] text-amber-700 font-bold">
+              {product.category}
             </span>
 
             <h1 className="text-4xl md:text-5xl font-serif mt-4 mb-6 uppercase text-neutral-900">
@@ -95,25 +112,28 @@ export default function ProductPage({
               {product.description}
             </p>
 
-            {/* Size Selection */}
+            {/* Dynamic Size Selection */}
             <div className="mb-10">
               <div className="flex justify-between items-center mb-4">
                 <span className="text-[10px] uppercase tracking-widest text-neutral-900">
-                  Select Size (EU)
+                  {sizeLabel}
                 </span>
                 <button className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-neutral-400 hover:text-black transition-colors">
                   <Ruler size={14} /> Size Guide
                 </button>
               </div>
-              <div className="grid grid-cols-4 gap-2">
-                {[39, 40, 41, 42, 43, 44, 45, 46].map((size) => (
+
+              <div
+                className={`grid gap-2 ${isAccessory ? "grid-cols-4" : "grid-cols-4"}`}
+              >
+                {sizeOptions.map((size) => (
                   <button
                     key={size}
-                    onClick={() => setSelectedSize(size.toString())}
-                    className={`py-3 border text-xs transition-all duration-300 ${
-                      selectedSize === size.toString()
+                    onClick={() => setSelectedSize(size)}
+                    className={`py-3 border text-xs tracking-wider transition-all duration-300 ${
+                      selectedSize === size
                         ? "bg-black text-white border-black"
-                        : "border-neutral-200 text-neutral-400 hover:border-black hover:text-black"
+                        : "border-neutral-200 text-neutral-500 hover:border-black hover:text-black"
                     }`}
                   >
                     {size}
@@ -121,6 +141,32 @@ export default function ProductPage({
                 ))}
               </div>
             </div>
+
+            {/* NEW: Personalization Field (Only shows for Accessories) */}
+            {isAccessory && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                className="mb-10 overflow-hidden"
+              >
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-[10px] uppercase tracking-widest text-neutral-900 flex items-center gap-2">
+                    <PenTool size={14} /> Personalized Inscription
+                  </span>
+                  <span className="text-[9px] uppercase tracking-widest text-neutral-400 italic">
+                    Optional
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  value={personalization}
+                  onChange={(e) => setPersonalization(e.target.value)}
+                  placeholder="E.g., Initials, date, or a short word..."
+                  maxLength={15}
+                  className="w-full border-b border-neutral-200 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-black transition-colors bg-transparent"
+                />
+              </motion.div>
+            )}
 
             {/* Production Note */}
             <div className="bg-neutral-50 p-4 mb-8 flex items-start gap-4 border border-neutral-100">
@@ -138,7 +184,7 @@ export default function ProductPage({
               <div className="flex items-center gap-6">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="text-neutral-400 hover:text-black transition-colors"
+                  className="text-neutral-400 hover:text-black transition-colors p-2"
                 >
                   —
                 </button>
@@ -147,7 +193,7 @@ export default function ProductPage({
                 </span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="text-neutral-400 hover:text-black transition-colors"
+                  className="text-neutral-400 hover:text-black transition-colors p-2"
                 >
                   +
                 </button>

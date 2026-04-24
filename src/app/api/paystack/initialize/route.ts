@@ -14,7 +14,7 @@ export async function POST(req: Request) {
         email,
         amount: amount * 100,
         metadata,
-        callback_url: `${process.env.NEXT_PUBLIC_BASE_URL}/thank-you`, // Where user goes after paying
+        callback_url: `${process.env.NEXT_PUBLIC_BASE_URL}/thank-you`, 
       }),
     });
 

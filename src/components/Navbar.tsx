@@ -49,6 +49,7 @@ export default function Navbar() {
     { name: "Collection", href: "/collections" },
     { name: "Bespoke", href: "/bespoke" },
     { name: "Contact", href: "/contact" },
+    { name: "Sizing", href: "/sizing" },
   ];
 
   // Animation variants for staggered mobile links
