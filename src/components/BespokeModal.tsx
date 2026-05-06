@@ -82,35 +82,52 @@ export default function BespokeModal() {
     }, 300);
   };
 
-  const handlePayment = async () => {
+  const handleWhatsAppCheckout = () => {
     setIsProcessing(true);
-    try {
-      const res = await fetch("/api/paystack/initialize", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          amount: totalAmount,
-          metadata: {
-            ...formData,
-            cartItems,
-          },
-        }),
-      });
 
-      const data = await res.json();
-      if (data.status && data.data.authorization_url) {
-        window.location.href = data.data.authorization_url;
-      } else {
-        throw new Error("Initialization failed");
-      }
-    } catch (error) {
-      console.error("Payment failed", error);
-      alert("Could not initialize payment. Please try again.");
+    // 1. Format the cart items cleanly
+    const formattedItems = cartItems
+      .map(
+        (item, index) =>
+          `${index + 1}. ${item.name}\n   Size: ${item.size}\n   Qty: ${item.quantity}\n   Subtotal: ₦${(
+            item.price * item.quantity
+          ).toLocaleString()}`,
+      )
+      .join("\n\n");
+
+    // 2. Build the structured WhatsApp message
+    const message = `*NEW LUXZY BESPOKE COMMISSION* 👞
+
+*CUSTOMER PROFILE*
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+*FIT & DELIVERY DETAILS*
+Foot Profile: ${formData.footProfile}
+Delivery Method: ${formData.deliveryMethod}
+Special Notes: ${formData.fitNotes || "None"}
+
+*ORDER SUMMARY*
+${formattedItems}
+
+*TOTAL AMOUNT: ₦${totalAmount.toLocaleString()}*
+
+Hello, I would like to proceed with this commission and arrange payment.`;
+
+    // 3. Encode the text for a URL and redirect
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/2348029092392?text=${encodedMessage}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
+
+    // 4. Show the success screen & clear the cart
+    setTimeout(() => {
       setIsProcessing(false);
-    }
+      setIsSuccess(true);
+      clearCart();
+    }, 1000);
   };
 
   useEffect(() => {
@@ -197,12 +214,12 @@ export default function BespokeModal() {
                       <Check size={32} />
                     </div>
                     <h4 className="text-2xl font-serif italic text-neutral-900">
-                      Commission Confirmed
+                      Commission Initiated
                     </h4>
                     <p className="text-sm text-neutral-500 font-light leading-relaxed max-w-xs">
-                      Your payment of ₦{totalAmount.toLocaleString()} has been
-                      secured. Our master artisan will contact you within 24
-                      hours to schedule your virtual fitting.
+                      Your order details have been forwarded to our studio via
+                      WhatsApp. Our master artisan will confirm your request and
+                      provide payment details shortly.
                     </p>
                     <button
                       onClick={handleClose}
@@ -490,7 +507,7 @@ export default function BespokeModal() {
                   </button>
                 ) : (
                   <button
-                    onClick={handlePayment}
+                    onClick={handleWhatsAppCheckout}
                     disabled={step === 1 && !isStepOneValid}
                     className="bg-black text-white px-10 py-4 text-[10px] uppercase tracking-[0.3em] flex items-center gap-2 hover:bg-neutral-800 transition-colors relative disabled:bg-neutral-200"
                   >
@@ -498,7 +515,8 @@ export default function BespokeModal() {
                       <Loader2 className="animate-spin" size={16} />
                     ) : (
                       <>
-                        Pay ₦{totalAmount.toLocaleString()} <Check size={14} />
+                        {/* Changed button text */}
+                        Send Order to WhatsApp <Check size={14} />
                       </>
                     )}
                   </button>

@@ -67,7 +67,7 @@ export default function FeaturedCollection() {
                   </span>
                 </div>
 
-                <p className="text-xs text-neutral-500 font-light mb-8 line-clamp-2 italic">
+                <p className="text-xs text-neutral-500 font-light mb-8 line-clamp-5 italic leading-relaxed">
                   "{product.description}"
                 </p>
 

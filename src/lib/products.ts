@@ -13,7 +13,7 @@ export interface Product {
     prefix: string;
     numeral: string;
   };
-  category: Category; // NEW
+  category: Category;
   tag: string;
   price: number;
   description: string;
@@ -30,7 +30,7 @@ export const PRODUCTS: Product[] = [
     id: "lx-001",
     slug: "curation-001",
     name: { prefix: "Classic", numeral: "Loafers" },
-    category: "Loafers", // Added Category
+    category: "Loafers",
     tag: "The Signature Edition",
     price: 25000,
     description:
@@ -46,7 +46,7 @@ export const PRODUCTS: Product[] = [
     id: "lx-002",
     slug: "curation-002",
     name: { prefix: "Premium", numeral: "Slippers" },
-    category: "Slippers", // Added Category
+    category: "Slippers",
     tag: "The Obsidian Edition",
     price: 25000,
     description:
@@ -61,17 +61,17 @@ export const PRODUCTS: Product[] = [
   {
     id: "lx-003",
     slug: "curation-003",
-    name: { prefix: "Leather", numeral: "Accessories" },
-    category: "Accessories", // Added Category
-    tag: "The Heritage ",
+    name: { prefix: "Signature", numeral: "Set" },
+    category: "Accessories",
+    tag: "Everyday Luxury",
     price: 25000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Complete your look, effortlessly. Premium leather build with clean edge finishing and neat, durable stitching. Includes belt, wallet, and wrist band—built for everyday luxury.",
     images: ["/u.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
-      { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
+      { label: "Hardware", value: "Solid Metal Buckle" },
+      { label: "Details", value: "Secure Snap Closure" },
     ],
   },
   {
@@ -79,15 +79,15 @@ export const PRODUCTS: Product[] = [
     slug: "curation-004",
     name: { prefix: "Premium", numeral: "Loafers" },
     category: "Loafers",
-    tag: "The Heritage",
+    tag: "Signature Stud",
     price: 25000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Not for regular days. A sharp patent finish meets a studded velvet face—built for presence, not permission. Clean silhouette, bold texture, unmistakable luxury. Slip-on ease, structured fit, and cushioned comfort. For nights that matter.",
     images: ["/w29.jpg"],
     leadTime: "1-2 weeks",
     stats: [
-      { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
+      { label: "Material", value: "Patent & Velvet" },
+      { label: "Construction", value: "Cushioned Slip-on" },
     ],
   },
   {
@@ -98,11 +98,11 @@ export const PRODUCTS: Product[] = [
     tag: "The Heritage",
     price: 25000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Built for presence, not permission. A masterclass in sophisticated design featuring a clean silhouette and unmistakable luxury. Slip-on ease meets structured comfort for the modern man.",
     images: ["/w28.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
-      { label: "Material", value: "Vegetable Tanned Leather" },
+      { label: "Material", value: "Premium Calfskin" },
       { label: "Construction", value: "Bespoke Hand-Welt" },
     ],
   },
@@ -202,47 +202,47 @@ export const PRODUCTS: Product[] = [
     slug: "curation-007",
     name: { prefix: "Curation No.", numeral: "007" },
     category: "Sandals",
-    tag: "The Heritage ",
+    tag: "The Signature Sandal",
     price: 25000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Command attention without saying a word. This is not your regular sandal—it's a structured leather piece designed for men who move with intention. Premium leather that ages beautifully, firm multi-strap hold, and an adjustable buckle for the perfect fit.",
     images: ["/w25.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
-      { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
+      { label: "Fit", value: "Firm Multi-Strap Hold" },
+      { label: "Hardware", value: "Adjustable Buckle" },
     ],
   },
   {
     id: "lx-067",
     slug: "curation-067",
-    name: { prefix: "Curation No.", numeral: "007" },
+    name: { prefix: "Curation No.", numeral: "067" },
     category: "Sandals",
-    tag: "The Heritage ",
+    tag: "Command Attention",
     price: 25000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Once you wear this, basic sandals won't feel the same. Clean lines, secure fit, and premium comfort, all in one silhouette. Built for comfort, styled for presence.",
     images: ["/w26.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
-      { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
+      { label: "Material", value: "Premium Aged Leather" },
+      { label: "Fit", value: "Secure Adjustable Fit" },
     ],
   },
   {
     id: "lx-017",
     slug: "curation-017",
-    name: { prefix: "Curation No.", numeral: "007" },
+    name: { prefix: "Curation No.", numeral: "017" },
     category: "Sandals",
-    tag: "The Heritage ",
+    tag: "Styled For Presence",
     price: 25000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "A structured leather piece designed for men who move with intention. Features a firm multi-strap hold so there is no loose feel. Premium comfort meets unmistakble luxury.",
     images: ["/w27.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
       { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
+      { label: "Hardware", value: "Adjustable Buckle" },
     ],
   },
   {
@@ -250,10 +250,10 @@ export const PRODUCTS: Product[] = [
     slug: "curation-008",
     name: { prefix: "Premium", numeral: "Slippers" },
     category: "Slippers",
-    tag: "The Heritage ",
+    tag: "The Signature Slide",
     price: 25000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "A testament to minimal architecture. This piece features a single-cut leather strap, hand-burnished edges, and an anatomically contoured footbed designed for permanence.",
     images: ["/x15.jpg"],
     leadTime: "1-2 weeks",
     stats: [
@@ -266,10 +266,10 @@ export const PRODUCTS: Product[] = [
     slug: "curation-018",
     name: { prefix: "Premium", numeral: "Slippers" },
     category: "Slippers",
-    tag: "The Heritage ",
+    tag: "Everyday Luxury",
     price: 25000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Clean silhouette, bold texture, unmistakable luxury. A bridge between traditional craftsmanship and modern utility.",
     images: ["/w21.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
@@ -285,7 +285,7 @@ export const PRODUCTS: Product[] = [
     tag: "The Heritage ",
     price: 25000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Designed for permanence. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
     images: ["/w22.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
@@ -298,7 +298,7 @@ export const PRODUCTS: Product[] = [
     slug: "curation-048",
     name: { prefix: "Premium", numeral: "Slippers" },
     category: "Slippers",
-    tag: "The Heritage ",
+    tag: "Quiet Luxury",
     price: 25000,
     description:
       "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
@@ -328,50 +328,49 @@ export const PRODUCTS: Product[] = [
   {
     id: "lx-009",
     slug: "curation-009",
-    name: { prefix: "Curation No.", numeral: "009" },
+    name: { prefix: "Leather", numeral: "Accessories" },
     category: "Accessories",
-    tag: "The Heritage ",
-    price: 25000,
+    tag: "Clean Silhouette",
+    price: 15000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Premium leather build with clean edge finishing. Features a solid metal buckle and neat, durable stitching. Complete your look effortlessly.",
     images: ["/w10.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
       { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
+      { label: "Hardware", value: "Solid Metal Buckle" },
     ],
   },
-
   {
     id: "lx-011",
     slug: "curation-011",
-    name: { prefix: "Curation No.", numeral: "011" },
+    name: { prefix: "Wrist", numeral: "Band" },
     category: "Accessories",
-    tag: "The Heritage ",
-    price: 25000,
+    tag: "Everyday Luxury",
+    price: 10000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Built for everyday luxury. A premium leather build featuring clean edge finishing, durable stitching, and a secure layout for your essentials.",
     images: ["/w12.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
-      { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
+      { label: "Material", value: "Premium Grain Leather" },
+      { label: "Finish", value: "Hand-Burnished Edges" },
     ],
   },
   {
     id: "lx-012",
     slug: "curation-012",
-    name: { prefix: "Curation No.", numeral: "012" },
+    name: { prefix: "Leather", numeral: "Wallet" },
     category: "Accessories",
-    tag: "The Heritage ",
-    price: 25000,
+    tag: "The Details",
+    price: 15000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "The final touch to your aesthetic. Crafted with neat, durable stitching and a secure snap closure. Complete your look effortlessly.",
     images: ["/w13.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
-      { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
+      { label: "Material", value: "Premium Leather" },
+      { label: "Hardware", value: "Secure Snap Closure" },
     ],
   },
   {
@@ -379,15 +378,15 @@ export const PRODUCTS: Product[] = [
     slug: "curation-013",
     name: { prefix: "Curation No.", numeral: "013" },
     category: "Accessories",
-    tag: "The Heritage ",
-    price: 25000,
+    tag: "Everyday Luxury",
+    price: 10000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Clean lines and unmistakable luxury. This accessory features our signature premium leather build and durable stitching.",
     images: ["/w14.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
       { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
+      { label: "Origin", value: "Handcrafted in Lagos" },
     ],
   },
   {
@@ -395,15 +394,15 @@ export const PRODUCTS: Product[] = [
     slug: "curation-014",
     name: { prefix: "Curation No.", numeral: "014" },
     category: "Accessories",
-    tag: "The Heritage ",
-    price: 25000,
+    tag: "Signature Details",
+    price: 10000,
     description:
-      "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
+      "Built for presence. Experience neat, durable stitching and clean edge finishing with this premium leather essential.",
     images: ["/w15.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
       { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
+      { label: "Origin", value: "Handcrafted in Lagos" },
     ],
   },
 ];
