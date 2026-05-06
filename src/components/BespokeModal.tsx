@@ -14,6 +14,7 @@ import {
   CreditCard,
   Loader2,
   ArrowLeft,
+  Info,
 } from "lucide-react";
 
 export default function BespokeModal() {
@@ -112,6 +113,9 @@ Special Notes: ${formData.fitNotes || "None"}
 ${formattedItems}
 
 *TOTAL AMOUNT: ₦${totalAmount.toLocaleString()}*
+
+*TERMS*
+✅ I acknowledge the 75% upfront deposit requirement to validate this order.
 
 Hello, I would like to proceed with this commission and arrange payment.`;
 
@@ -464,9 +468,20 @@ Hello, I would like to proceed with this commission and arrange payment.`;
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-3 text-[9px] text-neutral-400 uppercase tracking-widest">
-                          <CreditCard size={14} /> Secured by Paystack Encrypted
-                          Systems
+                        {/* NEW: Commission Terms Notice */}
+                        <div className="bg-[#1a1514] p-5 border-l-2 border-amber-600 mt-6">
+                          <h4 className="text-[10px] uppercase tracking-[0.3em] text-amber-500 font-bold mb-2 flex items-center gap-2">
+                            <Info size={14} /> Commission Terms
+                          </h4>
+                          <p className="text-xs text-neutral-300 font-light leading-relaxed">
+                            Please note that{" "}
+                            <strong className="font-medium text-white">
+                              payment validates your order.
+                            </strong>{" "}
+                            We require a 75% upfront deposit to commence
+                            production, with the remaining balance due upon
+                            completion prior to delivery.
+                          </p>
                         </div>
                       </motion.div>
                     )}
