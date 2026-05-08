@@ -31,10 +31,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // NEW: Handle Background Scroll Lock for Mobile Menu
+  // Handle Background Scroll Lock for Mobile Menu
   useEffect(() => {
     if (isMobileMenuOpen) {
-      // Small delay prevents immediate harsh jump on mobile
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
@@ -59,7 +58,7 @@ export default function Navbar() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2, // Wait for background to slide in
+        delayChildren: 0.2,
       },
     },
   };
@@ -71,7 +70,6 @@ export default function Navbar() {
       y: 0,
       transition: {
         duration: 0.4,
-        // cast easing array to any to satisfy Framer Motion's TypeScript types
         ease: [0.22, 1, 0.36, 1] as unknown as any,
       },
     },
@@ -81,10 +79,11 @@ export default function Navbar() {
     <>
       <motion.nav
         style={{ opacity: navbarOpacity }}
-        className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
-          isScrolled || isMobileMenuOpen // Force white background if menu is open
-            ? "bg-white/80 backdrop-blur-md shadow-sm"
-            : "bg-transparent"
+        // CHANGED: Removed 'fixed top-0 left-0 right-0'. Added 'w-full relative'.
+        className={`w-full relative z-[60] transition-all duration-500 border-b ${
+          isScrolled || isMobileMenuOpen
+            ? "bg-white/90 backdrop-blur-md border-neutral-100" // Added border when scrolled
+            : "bg-transparent border-transparent"
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 xl:px-16">
@@ -92,7 +91,7 @@ export default function Navbar() {
             {/* Logo + Name Combo */}
             <Link
               href="/"
-              onClick={() => setIsMobileMenuOpen(false)} // Close menu if logo clicked
+              onClick={() => setIsMobileMenuOpen(false)}
               className="relative z-[70] flex items-center gap-4 group"
             >
               <motion.div
@@ -139,7 +138,6 @@ export default function Navbar() {
                     }`}
                   >
                     {link.name}
-                    {/* Active Underline */}
                     {isActive && (
                       <motion.span
                         layoutId="navUnderline"
@@ -160,7 +158,7 @@ export default function Navbar() {
             <div className="flex items-center gap-6 relative z-[70]">
               <button
                 onClick={() => {
-                  setIsMobileMenuOpen(false); // Ensure menu closes if cart opened
+                  setIsMobileMenuOpen(false);
                   toggleCart();
                 }}
                 className="relative group p-2"
@@ -211,7 +209,8 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-white z-[55] md:hidden pt-32 px-12 pb-12 flex flex-col justify-between"
+            // Made sure the overlay drops below the new sticky header
+            className="fixed inset-0 top-[110px] bg-white z-[55] md:hidden px-12 pb-12 flex flex-col justify-between"
           >
             <motion.div
               variants={containerVariants}

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import BespokeModal from "@/components/BespokeModal";
 import ScrollProgress from "@/components/ScrollProgress";
+import AnnouncementBar from "@/components/AnnouncementBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,7 +73,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ScrollProgress />
-        <Navbar />
+
+        {/* NEW: The Sticky Wrapper */}
+        <div className="sticky top-0 z-[100] w-full flex flex-col">
+          <AnnouncementBar />
+          <Navbar />
+        </div>
+
         <CartDrawer />
         <BespokeModal />
         {children}

@@ -177,7 +177,7 @@ export default function Home() {
             premium feel."
           </h2>
           <span className="text-[10px] uppercase tracking-[0.4em] text-amber-700 font-bold block">
-            — Taiwo A., Lagos
+            — Feyisayo O.W., Lagos
           </span>
         </div>
       </section>

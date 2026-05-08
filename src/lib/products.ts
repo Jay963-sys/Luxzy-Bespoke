@@ -32,7 +32,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Classic Billonaire", numeral: "Loafers" },
     category: "Loafers",
     tag: "The Signature Edition",
-    price: 25000,
+    price: 115000, // Updated
     description:
       "A refined velvet slip-on designed for elegance and comfort.Finished with a bold gold crest embroidery, smooth inner lining, and clean polished edges for a timeless luxury look.",
     images: ["/w.jpeg"],
@@ -48,7 +48,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Premium", numeral: "Slippers" },
     category: "Slippers",
     tag: "The Obsidian Edition",
-    price: 25000,
+    price: 50000, // Updated
     description:
       "Cleanly crafted for comfort and ease.Features a soft suede finish, dual strap design,and lightweight sole for everyday luxury.",
     images: ["/t.jpeg"],
@@ -64,7 +64,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Signature", numeral: "Set" },
     category: "Accessories",
     tag: "Everyday Luxury",
-    price: 25000,
+    price: 55000, // Updated
     description:
       "Complete your look, effortlessly. Premium leather build with clean edge finishing and neat, durable stitching. Includes belt, wallet, and wrist band—built for everyday luxury.",
     images: ["/u.jpeg"],
@@ -80,7 +80,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Classic Tassel", numeral: "Loafers" },
     category: "Loafers",
     tag: "Signature Stud",
-    price: 25000,
+    price: 115000, // Updated
     description:
       "Crafted with a smooth leather finish and nature tassel detailing. Designed for comfort, durability, and timeless style. Made to stand the test of time.",
     images: ["/w99.jpg"],
@@ -96,7 +96,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Premium", numeral: "Loafers" },
     category: "Loafers",
     tag: "The Heritage",
-    price: 25000,
+    price: 115000, // Updated
     description:
       "Built for presence, not permission. A masterclass in sophisticated design featuring a clean silhouette and unmistakable luxury. Slip-on ease meets structured comfort for the modern man.",
     images: ["/w28.jpeg"],
@@ -112,7 +112,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Premium", numeral: "Slippers" },
     category: "Slippers",
     tag: "The Heritage ",
-    price: 25000,
+    price: 50000, // Updated
     description:
       "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
     images: ["/x20.jpg"],
@@ -122,14 +122,28 @@ export const PRODUCTS: Product[] = [
       { label: "Construction", value: "Bespoke Hand-Welt" },
     ],
   },
-
+  {
+    id: "lx-055",
+    slug: "curation-055",
+    name: { prefix: "Dress", numeral: "Mule" },
+    category: "Mules",
+    tag: "The Heritage ",
+    price: 75000, // Updated
+    description: "Elegance in every step",
+    images: ["/660.jpg"],
+    leadTime: "1-2 weeks",
+    stats: [
+      { label: "Material", value: "Vegetable Tanned Leather" },
+      { label: "Construction", value: "Bespoke Hand-Welt" },
+    ],
+  },
   {
     id: "lx-077",
     slug: "curation-077",
     name: { prefix: "Casual", numeral: "Mule" },
     category: "Mules",
     tag: "The Heritage ",
-    price: 25000,
+    price: 75000, // Updated
     description: "Made from animal skin",
     images: ["/w17.jpeg"],
     leadTime: "1-2 weeks",
@@ -144,7 +158,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Dress", numeral: "Mule" },
     category: "Mules",
     tag: "The Heritage ",
-    price: 25000,
+    price: 75000, // Updated
     description: "Elegance in every step",
     images: ["/w18.jpeg"],
     leadTime: "1-2 weeks",
@@ -159,7 +173,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Dress", numeral: "Mule" },
     category: "Mules",
     tag: "The Heritage ",
-    price: 25000,
+    price: 75000, // Updated
     description: "Speaks quiet Luxury",
     images: ["/w19.jpeg"],
     leadTime: "1-2 weeks",
@@ -174,7 +188,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Dress", numeral: "Mule" },
     category: "Mules",
     tag: "The Heritage ",
-    price: 25000,
+    price: 75000, // Updated
     description: "Speaks quiet Luxury",
     images: ["/w20.jpeg"],
     leadTime: "1-2 weeks",
@@ -189,7 +203,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Curation No.", numeral: "007" },
     category: "Sandals",
     tag: "The Signature Sandal",
-    price: 25000,
+    price: 99500, // Updated
     description:
       "Command attention without saying a word. This is not your regular sandal—it's a structured leather piece designed for men who move with intention. Premium leather that ages beautifully, firm multi-strap hold, and an adjustable buckle for the perfect fit.",
     images: ["/w25.jpeg"],
@@ -205,7 +219,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Curation No.", numeral: "067" },
     category: "Sandals",
     tag: "Command Attention",
-    price: 25000,
+    price: 99500, // Updated
     description:
       "Once you wear this, basic sandals won't feel the same. Clean lines, secure fit, and premium comfort, all in one silhouette. Built for comfort, styled for presence.",
     images: ["/w26.jpeg"],
@@ -221,7 +235,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Curation No.", numeral: "017" },
     category: "Sandals",
     tag: "Styled For Presence",
-    price: 25000,
+    price: 99500, // Updated
     description:
       "A structured leather piece designed for men who move with intention. Features a firm multi-strap hold so there is no loose feel. Premium comfort meets unmistakble luxury.",
     images: ["/w27.jpeg"],
@@ -237,7 +251,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Premium", numeral: "Slippers" },
     category: "Slippers",
     tag: "The Signature Slide",
-    price: 25000,
+    price: 50000, // Updated
     description:
       "A testament to minimal architecture. This piece features a single-cut leather strap, hand-burnished edges, and an anatomically contoured footbed designed for permanence.",
     images: ["/x15.jpg"],
@@ -253,7 +267,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Premium", numeral: "Slippers" },
     category: "Slippers",
     tag: "Everyday Luxury",
-    price: 25000,
+    price: 50000, // Updated
     description:
       "Clean silhouette, bold texture, unmistakable luxury. A bridge between traditional craftsmanship and modern utility.",
     images: ["/w21.jpeg"],
@@ -269,7 +283,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Premium", numeral: "Slippers" },
     category: "Slippers",
     tag: "The Heritage ",
-    price: 25000,
+    price: 50000, // Updated
     description:
       "Designed for permanence. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
     images: ["/w22.jpeg"],
@@ -285,7 +299,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Premium", numeral: "Slippers" },
     category: "Slippers",
     tag: "Quiet Luxury",
-    price: 25000,
+    price: 50000, // Updated
     description:
       "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
     images: ["/w23.jpeg"],
@@ -301,7 +315,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Premium", numeral: "Slippers" },
     category: "Slippers",
     tag: "The Heritage ",
-    price: 25000,
+    price: 50000, // Updated
     description:
       "A bridge between traditional craftsmanship and modern utility. Featuring a structured silhouette that softens and molds to the wearer's unique gait over time.",
     images: ["/w24.jpeg"],
@@ -317,7 +331,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Leather", numeral: "Accessories" },
     category: "Accessories",
     tag: "Clean Silhouette",
-    price: 15000,
+    price: 55000, // Updated
     description:
       "Premium leather build with clean edge finishing. Features a solid metal buckle and neat, durable stitching. Complete your look effortlessly.",
     images: ["/w10.jpeg"],
@@ -333,7 +347,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Wrist", numeral: "Band" },
     category: "Accessories",
     tag: "Everyday Luxury",
-    price: 10000,
+    price: 55000, // Updated
     description:
       "Signature Bracelet Minimal and refined with a clean inscription finish Designed for everyday style and comfort",
     images: ["/w12.jpeg"],
@@ -349,7 +363,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Leather", numeral: "Wallet" },
     category: "Accessories",
     tag: "The Details",
-    price: 15000,
+    price: 55000, // Updated
     description:
       "The final touch to your aesthetic. Crafted with neat, durable stitching and a secure snap closure. Complete your look effortlessly.",
     images: ["/w13.jpeg"],
@@ -365,7 +379,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Curation No.", numeral: "013" },
     category: "Accessories",
     tag: "Everyday Luxury",
-    price: 10000,
+    price: 55000, // Updated
     description:
       "Clean lines and unmistakable luxury. This accessory features our signature premium leather build and durable stitching.",
     images: ["/w14.jpeg"],
@@ -381,7 +395,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Curation No.", numeral: "014" },
     category: "Accessories",
     tag: "Signature Details",
-    price: 10000,
+    price: 55000, // Updated
     description:
       "Signature Bracelet Minimal and refined with a clean inscription finish Designed for everyday style and comfort",
     images: ["/w15.jpeg"],
