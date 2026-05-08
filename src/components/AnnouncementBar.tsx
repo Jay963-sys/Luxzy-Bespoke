@@ -7,7 +7,8 @@ export default function AnnouncementBar() {
       <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-amber-500 font-medium">
         The Luxzy Launch:{" "}
         <span className="font-light text-white ml-2">
-          Enjoy exclusive early-buyer Discount across all collections.
+          Enjoy exclusive early-buyer Discount across all collections for the
+          next 24 hours.
         </span>
       </p>
     </div>
