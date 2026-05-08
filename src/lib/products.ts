@@ -29,12 +29,12 @@ export const PRODUCTS: Product[] = [
   {
     id: "lx-001",
     slug: "curation-001",
-    name: { prefix: "Classic", numeral: "Loafers" },
+    name: { prefix: "Classic Billonaire", numeral: "Loafers" },
     category: "Loafers",
     tag: "The Signature Edition",
     price: 25000,
     description:
-      "A testament to minimal architecture. This piece features a single-cut leather strap, hand-burnished edges, and an anatomically contoured footbed designed for permanence.",
+      "A refined velvet slip-on designed for elegance and comfort.Finished with a bold gold crest embroidery, smooth inner lining, and clean polished edges for a timeless luxury look.",
     images: ["/w.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
@@ -50,7 +50,7 @@ export const PRODUCTS: Product[] = [
     tag: "The Obsidian Edition",
     price: 25000,
     description:
-      "Exploring the depth of midnight tones. This model focuses on texture contrast, pairing matte obsidian leather with a polished edge finish for a subtle, tiered aesthetic.",
+      "Cleanly crafted for comfort and ease.Features a soft suede finish, dual strap design,and lightweight sole for everyday luxury.",
     images: ["/t.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
@@ -77,13 +77,13 @@ export const PRODUCTS: Product[] = [
   {
     id: "lx-004",
     slug: "curation-004",
-    name: { prefix: "Premium", numeral: "Loafers" },
+    name: { prefix: "Classic Tassel", numeral: "Loafers" },
     category: "Loafers",
     tag: "Signature Stud",
     price: 25000,
     description:
-      "Not for regular days. A sharp patent finish meets a studded velvet face—built for presence, not permission. Clean silhouette, bold texture, unmistakable luxury. Slip-on ease, structured fit, and cushioned comfort. For nights that matter.",
-    images: ["/w29.jpg"],
+      "Crafted with a smooth leather finish and nature tassel detailing. Designed for comfort, durability, and timeless style. Made to stand the test of time.",
+    images: ["/w99.jpg"],
     leadTime: "1-2 weeks",
     stats: [
       { label: "Material", value: "Patent & Velvet" },
@@ -122,21 +122,7 @@ export const PRODUCTS: Product[] = [
       { label: "Construction", value: "Bespoke Hand-Welt" },
     ],
   },
-  {
-    id: "lx-006",
-    slug: "curation-006",
-    name: { prefix: "Casual", numeral: "Mule" },
-    category: "Mules",
-    tag: "The Heritage ",
-    price: 25000,
-    description: "Available in Colors",
-    images: ["/w16.jpeg"],
-    leadTime: "1-2 weeks",
-    stats: [
-      { label: "Material", value: "Vegetable Tanned Leather" },
-      { label: "Construction", value: "Bespoke Hand-Welt" },
-    ],
-  },
+
   {
     id: "lx-077",
     slug: "curation-077",
@@ -349,7 +335,7 @@ export const PRODUCTS: Product[] = [
     tag: "Everyday Luxury",
     price: 10000,
     description:
-      "Built for everyday luxury. A premium leather build featuring clean edge finishing, durable stitching, and a secure layout for your essentials.",
+      "Signature Bracelet Minimal and refined with a clean inscription finish Designed for everyday style and comfort",
     images: ["/w12.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
@@ -397,7 +383,7 @@ export const PRODUCTS: Product[] = [
     tag: "Signature Details",
     price: 10000,
     description:
-      "Built for presence. Experience neat, durable stitching and clean edge finishing with this premium leather essential.",
+      "Signature Bracelet Minimal and refined with a clean inscription finish Designed for everyday style and comfort",
     images: ["/w15.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
