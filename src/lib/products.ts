@@ -331,9 +331,9 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Leather", numeral: "Accessories" },
     category: "Accessories",
     tag: "Clean Silhouette",
-    price: 55000, // Updated
+    price: 15000, // Updated
     description:
-      "Premium leather build with clean edge finishing. Features a solid metal buckle and neat, durable stitching. Complete your look effortlessly.",
+      "Signature Bracelet Minimal and refined with a clean inscription finish Designed for everyday style and comfort",
     images: ["/w10.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
@@ -347,7 +347,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Wrist", numeral: "Band" },
     category: "Accessories",
     tag: "Everyday Luxury",
-    price: 55000, // Updated
+    price: 15000, // Updated
     description:
       "Signature Bracelet Minimal and refined with a clean inscription finish Designed for everyday style and comfort",
     images: ["/w12.jpeg"],
@@ -363,7 +363,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Leather", numeral: "Wallet" },
     category: "Accessories",
     tag: "The Details",
-    price: 55000, // Updated
+    price: 20000, // Updated
     description:
       "The final touch to your aesthetic. Crafted with neat, durable stitching and a secure snap closure. Complete your look effortlessly.",
     images: ["/w13.jpeg"],
@@ -379,9 +379,9 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Curation No.", numeral: "013" },
     category: "Accessories",
     tag: "Everyday Luxury",
-    price: 55000, // Updated
+    price: 15000, // Updated
     description:
-      "Clean lines and unmistakable luxury. This accessory features our signature premium leather build and durable stitching.",
+      "Signature Bracelet Minimal and refined with a clean inscription finish Designed for everyday style and comfort",
     images: ["/w14.jpeg"],
     leadTime: "1-2 weeks",
     stats: [
@@ -395,7 +395,7 @@ export const PRODUCTS: Product[] = [
     name: { prefix: "Curation No.", numeral: "014" },
     category: "Accessories",
     tag: "Signature Details",
-    price: 55000, // Updated
+    price: 15000, // Updated
     description:
       "Signature Bracelet Minimal and refined with a clean inscription finish Designed for everyday style and comfort",
     images: ["/w15.jpeg"],
