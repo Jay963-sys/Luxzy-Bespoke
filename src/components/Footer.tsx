@@ -92,10 +92,7 @@ export default function Footer() {
                   size={16}
                   className="mt-0.5 flex-shrink-0 text-amber-600"
                 />
-                <span>
-                  Surulere <br />
-                  Lagos, Nigeria
-                </span>
+                <span>Lagos, Nigeria</span>
               </li>
               <li className="pt-4">
                 <Link
