@@ -29,7 +29,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "lx-001",
     slug: "curation-001",
-    name: { prefix: "Classic Billonaire", numeral: "Loafers" },
+    name: { prefix: "Classic Billionaire", numeral: "Loafers" },
     category: "Loafers",
     tag: "The Signature Edition",
     price: 103500, // Updated
