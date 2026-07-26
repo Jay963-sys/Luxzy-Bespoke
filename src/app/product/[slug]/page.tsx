@@ -93,7 +93,7 @@ export default function ProductPage({
           </div>
 
           {/* Right: Details (Sticky) */}
-          <div className="lg:sticky lg:top-32 h-fit">
+<div className="lg:sticky lg:top-32 h-fit max-h-[calc(100dvh-8rem)] overflow-y-auto pb-12 hide-scrollbar">
             <span className="text-[10px] uppercase tracking-[0.4em] text-amber-700 font-bold">
               {product.category}
             </span>
