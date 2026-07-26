@@ -14,53 +14,60 @@ export default function Home() {
   return (
     <main className="bg-white">
       {/* 1. HERO SECTION (First Impression) */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-neutral-50">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/y.jpg" // Big sharp image
-            alt="Luxzy Bespoke Craftsmanship"
-            fill
-            className="object-cover opacity-90"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-        </div>
-
-        <div className="container relative z-10 mx-auto px-6 text-center mt-20">
+      {/* 1. HERO SECTION (Split Layout) */}
+      <section className="relative min-h-[85vh] flex items-center bg-[#1a1514] overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12 pt-24 md:pt-0">
+          {/* Left Side: Text */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="md:w-1/2 z-10 text-center md:text-left"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tighter text-white mb-6 uppercase">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tighter text-white mb-6 uppercase leading-tight">
               Crafted for Men <br />
               <span className="font-serif italic lowercase text-amber-500">
                 of Presence
               </span>
             </h1>
-            <p className="text-neutral-300 max-w-lg mx-auto leading-relaxed font-light mb-10 text-sm md:text-base tracking-wide uppercase">
+            <p className="text-neutral-400 leading-relaxed font-light mb-10 text-xs md:text-sm tracking-widest uppercase">
               Luxury Bespoke Footwear & Leather Goods
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
               <Link
                 href="/collections"
-                className="bg-white text-black px-10 py-5 text-[10px] uppercase tracking-[0.3em] hover:bg-neutral-200 transition-colors w-full sm:w-auto"
+                className="bg-white text-black px-10 py-5 text-[10px] uppercase tracking-[0.3em] hover:bg-neutral-200 transition-colors w-full sm:w-auto text-center"
               >
                 Shop Collection
               </Link>
               <Link
                 href={whatsappLink}
                 target="_blank"
-                className="bg-transparent border border-white text-white px-10 py-5 text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-colors w-full sm:w-auto"
+                className="bg-transparent border border-white text-white px-10 py-5 text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-colors w-full sm:w-auto text-center"
               >
                 Order Custom
               </Link>
             </div>
           </motion.div>
+
+          {/* Right Side: Image */}
+          <motion.div
+            className="md:w-1/2 w-full h-[50vh] md:h-[85vh] relative"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            <Image
+              src="/660.jpg"
+              alt="Luxzy Bespoke Craftsmanship"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </motion.div>
         </div>
       </section>
-
       {/* 2. ABOUT SECTION */}
       <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center">

@@ -7,6 +7,7 @@ import CartDrawer from "@/components/CartDrawer";
 import BespokeModal from "@/components/BespokeModal";
 import ScrollProgress from "@/components/ScrollProgress";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import MetaPixel from "@/components/MetaPixel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -83,6 +84,7 @@ export default function RootLayout({
         <CartDrawer />
         <BespokeModal />
         {children}
+        <MetaPixel />
         <Footer />
       </body>
     </html>

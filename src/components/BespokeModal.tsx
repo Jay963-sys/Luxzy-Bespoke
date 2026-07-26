@@ -17,6 +17,12 @@ import {
   Info,
 } from "lucide-react";
 
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
+
 export default function BespokeModal() {
   const { isOpen, closeBespoke } = useBespokeStore();
   const { toggleCart, cartItems } = useCartStore();
@@ -52,9 +58,7 @@ export default function BespokeModal() {
 
   const validatePhone = (phone: string) => {
     const cleaned = phone.replace(/\s+/g, "");
-
     const regex = /^(?:\+234|234|0)(7|8|9)\d{9}$/;
-
     return regex.test(cleaned);
   };
 
@@ -86,12 +90,26 @@ export default function BespokeModal() {
   const handleWhatsAppCheckout = () => {
     setIsProcessing(true);
 
+    // 2. Fire the Meta Pixel Event (passing the purchase value)
+    if (typeof window !== "undefined" && window.fbq) {
+      console.log("🔥 Firing Meta Pixel: InitiateCheckout", {
+        value: totalAmount,
+        currency: "NGN",
+        num_items: cartItems.length,
+      });
+      window.fbq("track", "InitiateCheckout", {
+        value: totalAmount,
+        currency: "NGN",
+        num_items: cartItems.length,
+      });
+    }
+
     // 1. Format the cart items cleanly
     const formattedItems = cartItems
       .map(
         (item, index) =>
           `${index + 1}. ${item.name}\n   Size: ${item.size}\n   Qty: ${item.quantity}\n   Subtotal: ₦${(
-            item.price * item.quantity
+            item.price * (item.quantity || 1)
           ).toLocaleString()}`,
       )
       .join("\n\n");
