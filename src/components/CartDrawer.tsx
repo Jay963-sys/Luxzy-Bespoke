@@ -64,7 +64,7 @@ export default function CartDrawer() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed right-0 top-0 h-screen w-full md:w-[450px] bg-white z-[70] shadow-2xl flex flex-col"
+            className="fixed right-0 top-0 h-[100dvh] w-full md:w-[450px] bg-white z-[70] shadow-2xl flex flex-col"
           >
             {/* Header */}
             <div className="p-8 flex items-center justify-between border-b border-neutral-100">
@@ -86,7 +86,8 @@ export default function CartDrawer() {
 
             <div className="flex-1 overflow-y-auto p-8 space-y-8">
               {cartItems.length === 0 ? (
-                <div className="h-full flex flex-col items-center justify-center text-center">
+                <div className="flex-1 overflow-y-auto p-8 space-y-8 min-h-0">
+                  {" "}
                   <ShoppingBag
                     size={40}
                     strokeWidth={0.5}
