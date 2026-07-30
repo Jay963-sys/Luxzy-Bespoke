@@ -29,7 +29,7 @@ export default function MetaPixel() {
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
           
-          fbq('init', '1524064289200733'); // Your Toye Studios/Client Pixel ID
+          fbq('init', '1403879958253275'); 
           fbq('track', 'PageView');
         `,
       }}
