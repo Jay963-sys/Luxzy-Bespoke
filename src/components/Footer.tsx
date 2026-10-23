@@ -107,18 +107,23 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-neutral-500">
           <p>&copy; {currentYear} Luxzy Bespoke Footwear & Leather Works.</p>
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Terms of Service
+            </Link>
             <Link
               href="/privacy"
               className="hover:text-white transition-colors"
             >
-              Privacy
+              Privacy Policy
             </Link>
             <Link href="/terms" className="hover:text-white transition-colors">
-              Terms
+              Delivery Policy
+            </Link>
+            <Link href="/terms" className="hover:text-white transition-colors">
+              Refund Policy
             </Link>
           </div>
         </div>
