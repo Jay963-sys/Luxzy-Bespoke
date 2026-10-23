@@ -107,6 +107,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-neutral-500">
           <p>&copy; {currentYear} Luxzy Bespoke Footwear & Leather Works.</p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
@@ -119,10 +120,13 @@ export default function Footer() {
             >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            <Link
+              href="/delivery"
+              className="hover:text-white transition-colors"
+            >
               Delivery Policy
             </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            <Link href="/refund" className="hover:text-white transition-colors">
               Refund Policy
             </Link>
           </div>

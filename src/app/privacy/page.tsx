@@ -1,7 +1,9 @@
 export default function PrivacyPage() {
   return (
-    <main className="container mx-auto px-6 py-24 max-w-4xl text-neutral-800">
-      <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
+    <main className="container mx-auto px-6 py-24 max-w-4xl text-neutral-800 dark:text-neutral-200">
+      <h1 className="text-3xl font-bold mb-8 text-neutral-900 dark:text-white">
+        Privacy Policy
+      </h1>
 
       <section className="mb-8">
         <p className="mb-4">
@@ -19,7 +21,9 @@ export default function PrivacyPage() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold mb-4">Customer Support</h2>
+        <h2 className="text-xl font-semibold mb-4 text-neutral-900 dark:text-white">
+          Customer Support
+        </h2>
         <p className="mb-4">
           For orders, enquiries, complaints or other assistance, please contact
           Luxzy through the official contact details published on our website:
